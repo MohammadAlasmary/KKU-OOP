@@ -9,9 +9,8 @@ public class StudentApp {
 
         String studentFullName = null;
         String idNumber = null;
-        // Fixed number of subjects based on the request to use three variables
         int numberOfLastSemesterSubjects = 3;
-        double subjectMark1 = 0.0; // Replaced array with individual variables
+        double subjectMark1 = 0.0; // Replaced with array later
         double subjectMark2 = 0.0;
         double subjectMark3 = 0.0;
         double totalMarks = 0;
@@ -39,7 +38,7 @@ public class StudentApp {
                 continue; // Go back to the start of the loop
             }
 
-            scanner.nextLine(); // Consume the newline left by nextInt()
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -64,7 +63,7 @@ public class StudentApp {
                         studentFullName = "";
                     }
 
-                    // Number of subjects is now fixed at 3, no user input needed here
+                  
                     System.out.println("Number of subjects is fixed at " + numberOfLastSemesterSubjects + ".");
 
                     detailsEntered = true;
@@ -84,7 +83,7 @@ public class StudentApp {
                     }
 
                     System.out.println("Enter marks for " + numberOfLastSemesterSubjects + " subjects:");
-                    totalMarks = 0; // Reset total before calculating
+                    totalMarks = 0; 
                     boolean validMarksInput = true;
 
                     // Input for the three individual subject marks
@@ -144,10 +143,6 @@ public class StudentApp {
                              percentage = Math.round(percentage * 100.0) / 100.0;
                              marksEntered = true;
                              System.out.println("Total marks and percentage calculated.");
-                        } else {
-                             // This case should not be reachable with numberOfLastSemesterSubjects fixed at 3
-                             System.out.println("Cannot calculate percentage with 0 subjects.");
-                             marksEntered = false;
                         }
                     } else {
                         marksEntered = false; // Invalidate marks if input was invalid
